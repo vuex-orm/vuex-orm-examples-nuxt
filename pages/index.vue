@@ -15,6 +15,7 @@
 
 <script>
 import data from '@/data'
+import Todo from '@/models/Todo'
 import AppHeader from '@/components/AppHeader'
 import Description from '@/components/Description'
 import Users from '@/components/Users'
@@ -35,7 +36,7 @@ export default {
     // should be the response from the API Backend.
     const initialData = await data()
 
-    store.dispatch('entities/todos/create', { data: initialData })
+    Todo.create({ data: initialData })
   }
 }
 </script>

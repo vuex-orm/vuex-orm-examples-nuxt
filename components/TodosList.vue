@@ -12,7 +12,7 @@
         @input="e => { update(todo.id, e.target.value) }"
       >
 
-      <Assignee :todoId="todo.id" />
+      <Assignee :todo-id="todo.id" />
 
       <button class="icon" @click="destroy(todo.id)">
         <Trash class="svg" />
@@ -22,6 +22,7 @@
 </template>
 
 <script>
+import Todo from '@/models/Todo'
 import CheckCircle from './icons/CheckCircle'
 import Trash from './icons/Trash'
 import Assignee from './TodosAssignee'
@@ -35,21 +36,21 @@ export default {
 
   computed: {
     todos () {
-      return this.$store.getters['entities/todos/query']().orderBy('id', 'desc').get()
+      return Todo.query().orderBy('id', 'desc').get()
     }
   },
 
   methods: {
     toggle (todo) {
-      this.$store.dispatch('entities/todos/update', { id: todo.id, done: !todo.done })
+      Todo.update({ id: todo.id, done: !todo.done })
     },
 
     update (id, title) {
-      this.$store.dispatch('entities/todos/update', { id, title })
+     Todo.update({ id, title })
     },
 
     destroy (id) {
-      this.$store.dispatch('entities/todos/delete', id)
+      Todo.delete(id)
     }
   }
 }

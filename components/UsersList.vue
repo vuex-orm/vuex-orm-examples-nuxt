@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import User from '@/models/User'
 import Trash from './icons/Trash'
 
 export default {
@@ -27,17 +28,17 @@ export default {
 
   computed: {
     users () {
-      return this.$store.getters['entities/users/query']().with('todos').orderBy('id', 'desc').get()
+      return User.query().with('todos').orderBy('id', 'desc').get()
     }
   },
 
   methods: {
     update (id, name) {
-      this.$store.dispatch('entities/users/update', { id, name })
+      User.update({ id, name })
     },
 
     destroy (id) {
-      this.$store.dispatch('entities/users/delete', id)
+      User.delete(id)
     }
   }
 }

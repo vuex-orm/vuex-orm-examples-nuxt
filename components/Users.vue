@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import User from '@/models/User'
 import UsersList from './UsersList'
 
 export default {
@@ -21,7 +22,7 @@ export default {
 
   methods: {
     add () {
-      this.$store.dispatch('entities/users/insert', {
+      User.insert({
         data: { name: '' }
       })
     }

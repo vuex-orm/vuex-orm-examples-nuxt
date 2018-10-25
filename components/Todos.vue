@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import Todo from '@/models/Todo'
 import TodosList from './TodosList'
 
 export default {
@@ -21,7 +22,7 @@ export default {
 
   methods: {
     add () {
-      this.$store.dispatch('entities/todos/insert', {
+      Todo.insert({
         data: { title: '' }
       })
     }
