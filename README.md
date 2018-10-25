@@ -1,6 +1,6 @@
 # Vuex ORM Examples Nuxt
 
-The example [Nuxt](https://nuxtjs.org/) application to demonstrate the use case of the [Vuex ORM](https://github.com/revolver-app/vuex-orm). It's a simple ToDo application which can add assignee to each todo. You can see how Vuex ORM connects those two models – Todo and Assignee – and how to create, edit and delete them.
+The example [Nuxt](https://nuxtjs.org/) application to demonstrate the use case of the [Vuex ORM](https://github.com/vuex-orm/vuex-orm). It's a simple ToDo application which can add assignee to each todo. You can see how Vuex ORM connects those two models – Todo and Assignee – and how to create, edit and delete them.
 
 ## Running The Example
 
