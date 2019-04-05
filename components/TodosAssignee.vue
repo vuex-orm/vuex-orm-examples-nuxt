@@ -57,7 +57,7 @@ export default {
 </script>
 
 <style scoped>
-@import "styles/variables";
+@import "@/assets/styles/variables";
 
 .TodosAssignee {
   position: relative;

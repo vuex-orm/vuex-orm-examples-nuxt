@@ -6,7 +6,7 @@
 </template>
 
 <style scoped>
-@import "styles/variables";
+@import "@/assets/styles/variables";
 
 .AppHeader {
   padding-bottom: 24px;

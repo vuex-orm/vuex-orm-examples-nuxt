@@ -1,12 +1,13 @@
-module.exports = {
+export default {
   mode: 'universal',
 
   build: {
-    postcss: [
-      require('postcss-import')({ path: './assets' }),
-      require('postcss-nested')(),
-      require('postcss-css-variables')()
-    ]
+    postcss: {
+      plugins: {
+        'postcss-nested': {},
+        'postcss-css-variables': {},
+      }
+    }
   },
 
   head: {

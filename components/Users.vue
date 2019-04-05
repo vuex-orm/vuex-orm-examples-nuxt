@@ -31,7 +31,7 @@ export default {
 </script>
 
 <style scoped>
-@import "styles/variables";
+@import "@/assets/styles/variables";
 
 .container {
   border-radius: 4px;

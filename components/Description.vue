@@ -5,7 +5,7 @@
 </template>
 
 <style scoped>
-@import "styles/variables";
+@import "@/assets/styles/variables";
 
 .Description {
   margin: 0 auto;

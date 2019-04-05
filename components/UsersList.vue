@@ -45,7 +45,7 @@ export default {
 </script>
 
 <style scoped>
-@import "styles/variables";
+@import "@/assets/styles/variables";
 
 .user {
   display: flex;
