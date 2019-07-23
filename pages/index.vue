@@ -2,11 +2,11 @@
   <div class="App">
     <AppHeader />
 
-    <Description />
+    <AppDescription />
 
     <div class="container">
-      <div class="users"><Users /></div>
-      <div class="todos"><Todos /></div>
+      <div class="users"><UsersSection /></div>
+      <div class="todos"><TodosSection /></div>
     </div>
 
     <AppFooter />
@@ -17,17 +17,17 @@
 import data from '@/data'
 import Todo from '@/models/Todo'
 import AppHeader from '@/components/AppHeader'
-import Description from '@/components/Description'
-import Users from '@/components/Users'
-import Todos from '@/components/Todos'
+import AppDescription from '@/components/AppDescription'
+import UsersSection from '@/components/UsersSection'
+import TodosSection from '@/components/TodosSection'
 import AppFooter from '@/components/AppFooter'
 
 export default {
   components: {
     AppHeader,
-    Description,
-    Users,
-    Todos,
+    AppDescription,
+    UsersSection,
+    TodosSection,
     AppFooter
   },
 

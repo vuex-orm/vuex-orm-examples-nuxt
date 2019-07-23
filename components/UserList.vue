@@ -11,7 +11,7 @@
       <p class="tasks">{{ user.todos.length }} Tasks</p>
 
       <button class="icon" @click="destroy(user.id)">
-        <Trash class="trash" />
+        <IconTrash class="trash" />
       </button>
     </div>
   </div>
@@ -19,11 +19,11 @@
 
 <script>
 import User from '@/models/User'
-import Trash from './icons/Trash'
+import IconTrash from './icons/IconTrash'
 
 export default {
   components: {
-    Trash
+    IconTrash
   },
 
   computed: {

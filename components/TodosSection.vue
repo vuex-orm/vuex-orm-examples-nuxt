@@ -6,18 +6,18 @@
         <button class="button" @click="add">ADD TODO</button>
       </div>
 
-      <TodosList />
+      <TodoList />
     </div>
   </section>
 </template>
 
 <script>
 import Todo from '@/models/Todo'
-import TodosList from './TodosList'
+import TodoList from './TodoList'
 
 export default {
   components: {
-    TodosList
+    TodoList
   },
 
   methods: {

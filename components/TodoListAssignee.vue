@@ -15,20 +15,20 @@
       </option>
     </select>
 
-    <ChevronDown class="down" />
+    <IconChevronDown class="down" />
   </div>
 </template>
 
 <script>
 import User from '@/models/User'
 import Todo from '@/models/Todo'
-import IconUser from '@/components/icons/User'
-import ChevronDown from '@/components/icons/ChevronDown'
+import IconUser from '@/components/icons/IconUser'
+import IconChevronDown from '@/components/icons/IconChevronDown'
 
 export default {
   components: {
     IconUser,
-    ChevronDown
+    IconChevronDown
   },
 
   props: {
@@ -41,7 +41,7 @@ export default {
     },
 
     todo () {
-      return Todo.query().with('assignee').find(this.todoId)
+      return Todo.query().with('assignee').whereId(this.todoId).first()
     }
   },
 

@@ -4,7 +4,7 @@ import Todo from '@/models/Todo'
 
 const database = new Database()
 
-database.register(User, {})
-database.register(Todo, {})
+database.register(User)
+database.register(Todo)
 
 export default database

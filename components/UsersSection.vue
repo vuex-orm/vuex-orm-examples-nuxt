@@ -6,18 +6,18 @@
         <button class="button" @click="add">ADD USER</button>
       </div>
 
-      <UsersList />
+      <UserList />
     </div>
   </section>
 </template>
 
 <script>
 import User from '@/models/User'
-import UsersList from './UsersList'
+import UserList from './UserList'
 
 export default {
   components: {
-    UsersList
+    UserList
   },
 
   methods: {

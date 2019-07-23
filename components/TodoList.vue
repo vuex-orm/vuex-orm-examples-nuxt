@@ -2,20 +2,20 @@
   <div class="TodosList">
     <div class="todo" :class="{ done: todo.done }" :key="todo.id" v-for="todo in todos">
       <button class="icon" @click="toggle(todo)">
-        <CheckCircle class="svg check" />
+        <IconCheckCircle class="svg check" />
       </button>
 
       <input
         class="input"
         :value="todo.title"
         placeholder="Type in the title of the task!"
-        @input="e => { update(todo.id, e.target.value) }"
+        @input="e => { update(todo, e.target.value) }"
       >
 
-      <Assignee :todo-id="todo.id" />
+      <TodoListAssignee :todo-id="todo.id" />
 
-      <button class="icon" @click="destroy(todo.id)">
-        <Trash class="svg" />
+      <button class="icon" @click="destroy(todo)">
+        <IconTrash class="svg" />
       </button>
     </div>
   </div>
@@ -23,15 +23,15 @@
 
 <script>
 import Todo from '@/models/Todo'
-import CheckCircle from './icons/CheckCircle'
-import Trash from './icons/Trash'
-import Assignee from './TodosAssignee'
+import IconCheckCircle from './icons/IconCheckCircle'
+import IconTrash from './icons/IconTrash'
+import TodoListAssignee from './TodoListAssignee'
 
 export default {
   components: {
-    CheckCircle,
-    Trash,
-    Assignee
+    IconCheckCircle,
+    IconTrash,
+    TodoListAssignee
   },
 
   computed: {
@@ -42,15 +42,15 @@ export default {
 
   methods: {
     toggle (todo) {
-      Todo.update({ id: todo.id, done: !todo.done })
+      todo.$update({ done: !todo.done })
     },
 
-    update (id, title) {
-     Todo.update({ id, title })
+    update (todo, title) {
+     todo.$update({ title })
     },
 
-    destroy (id) {
-      Todo.delete(id)
+    destroy (todo) {
+      todo.$delete()
     }
   }
 }
