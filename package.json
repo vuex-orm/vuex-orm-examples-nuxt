@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@vuex-orm/core": "^0.32.0",
+    "@vuex-orm/core": "^0.32.1",
     "normalize.css": "^8.0.0",
     "nuxt": "^2.8.1",
     "postcss-css-variables": "^0.13.0",
