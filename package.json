@@ -8,17 +8,17 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
   },
   "dependencies": {
-    "@vuex-orm/core": "^0.34.0",
+    "@vuex-orm/core": "^0.36.3",
     "normalize.css": "^8.0.0",
-    "nuxt": "^2.10.2",
+    "nuxt": "^2.11.0",
     "postcss-css-variables": "^0.14.0",
     "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.3",
-    "eslint": "^6.7.1",
-    "eslint-loader": "^3.0.2",
-    "eslint-plugin-vue": "^6.0.1"
+    "babel-eslint": "^10.1.0",
+    "eslint": "^6.8.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-vue": "^6.2.2"
   }
 }
