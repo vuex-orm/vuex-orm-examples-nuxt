@@ -2,9 +2,9 @@
   <div class="TodosList">
     <div class="todo" :class="{ done: todo.done }" :key="todo.id" v-for="todo in todos">
       <button class="icon" @click="toggle(todo)">
-        <IconCheckCircle class="svg check" />
+        <IconCheckCircle class="svg check"/>
       </button>
-
+      
       <input
         class="input"
         :value="todo.title"
@@ -12,48 +12,41 @@
         @input="e => { update(todo, e.target.value) }"
       >
 
-      <TodoListAssignee :todo-id="todo.id" />
+      <TodoListAssignee :todo-id="todo.id"/>
 
       <button class="icon" @click="destroy(todo)">
-        <IconTrash class="svg" />
+        <IconTrash class="svg"/>
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import Todo from '@/models/Todo'
-import IconCheckCircle from './icons/IconCheckCircle'
-import IconTrash from './icons/IconTrash'
-import TodoListAssignee from './TodoListAssignee'
+import Todo from "@/models/Todo";
 
 export default {
-  components: {
-    IconCheckCircle,
-    IconTrash,
-    TodoListAssignee
-  },
-
   computed: {
-    todos () {
-      return Todo.query().orderBy('id', 'desc').get()
+    todos() {
+      return Todo.query()
+        .orderBy("id", "desc")
+        .get();
     }
   },
 
   methods: {
-    toggle (todo) {
-      todo.$update({ done: !todo.done })
+    toggle(todo) {
+      todo.$update({ done: !todo.done });
     },
 
-    update (todo, title) {
-     todo.$update({ title })
+    update(todo, title) {
+      todo.$update({ title });
     },
 
-    destroy (todo) {
-      todo.$delete()
+    destroy(todo) {
+      todo.$delete();
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -90,7 +83,7 @@ export default {
   padding: 12px 24px 12px 0;
   width: 100%;
   background-color: transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .icon {
@@ -111,7 +104,7 @@ export default {
   height: 14px;
   opacity: 0;
   transform: translateY(2px);
-  transition: all .3s;
+  transition: all 0.3s;
   fill: var(--c-gray);
 }
 

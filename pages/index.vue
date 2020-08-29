@@ -16,21 +16,8 @@
 <script>
 import data from '@/data'
 import Todo from '@/models/Todo'
-import AppHeader from '@/components/AppHeader'
-import AppDescription from '@/components/AppDescription'
-import UsersSection from '@/components/UsersSection'
-import TodosSection from '@/components/TodosSection'
-import AppFooter from '@/components/AppFooter'
 
 export default {
-  components: {
-    AppHeader,
-    AppDescription,
-    UsersSection,
-    TodosSection,
-    AppFooter
-  },
-
   async fetch () {
     // Here we are stubbing the initial data. In the real world, this
     // should be the response from the API Backend.

@@ -11,37 +11,35 @@
       <p class="tasks">{{ user.todos.length }} Tasks</p>
 
       <button class="icon" @click="destroy(user.id)">
-        <IconTrash class="trash" />
+        <IconTrash class="trash"/>
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import User from '@/models/User'
-import IconTrash from './icons/IconTrash'
+import User from "@/models/User";
 
 export default {
-  components: {
-    IconTrash
-  },
-
   computed: {
-    users () {
-      return User.query().with('todos').orderBy('id', 'desc').get()
+    users() {
+      return User.query()
+        .with("todos")
+        .orderBy("id", "desc")
+        .get();
     }
   },
 
   methods: {
-    update (id, name) {
-      User.update({ id, name })
+    update(id, name) {
+      User.update({ id, name });
     },
 
-    destroy (id) {
-      User.delete(id)
+    destroy(id) {
+      User.delete(id);
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -67,7 +65,7 @@ export default {
   padding: 12px 24px;
   width: 100%;
   background-color: transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .tasks {
@@ -90,7 +88,7 @@ export default {
   height: 14px;
   opacity: 0;
   transform: translateY(2px);
-  transition: all .3s;
+  transition: all 0.3s;
   fill: var(--c-gray);
 }
 </style>

@@ -6,28 +6,23 @@
         <button class="button" @click="add">ADD TODO</button>
       </div>
 
-      <TodoList />
+      <TodoList/>
     </div>
   </section>
 </template>
 
 <script>
-import Todo from '@/models/Todo'
-import TodoList from './TodoList'
+import Todo from "@/models/Todo";
 
 export default {
-  components: {
-    TodoList
-  },
-
   methods: {
-    add () {
+    add() {
       Todo.insert({
-        data: { title: '' }
-      })
+        data: { title: "" }
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -59,7 +54,7 @@ export default {
   line-height: 30px;
   font-size: 12px;
   color: var(--c-gray);
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     border-color: var(--c-gray);

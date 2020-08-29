@@ -6,28 +6,23 @@
         <button class="button" @click="add">ADD USER</button>
       </div>
 
-      <UserList />
+      <UserList/>
     </div>
   </section>
 </template>
 
 <script>
-import User from '@/models/User'
-import UserList from './UserList'
+import User from "@/models/User";
 
 export default {
-  components: {
-    UserList
-  },
-
   methods: {
-    add () {
+    add() {
       User.insert({
-        data: { name: '' }
-      })
+        data: { name: "" }
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -59,7 +54,7 @@ export default {
   line-height: 30px;
   font-size: 12px;
   color: var(--c-gray);
-  transition: all .3s;
+  transition: all 0.3s;
 
   &:hover {
     border-color: var(--c-gray);
