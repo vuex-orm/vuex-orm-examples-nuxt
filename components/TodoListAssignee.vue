@@ -1,59 +1,55 @@
 <template>
   <div class="TodosAssignee">
-    <IconUser class="user" />
+    <IconUser class="user"/>
 
     <select class="select" :class="{ selected: !!todo.assignee }" @change="update">
-      <option class="option" value="">Choose assignee</option>
+      <option class="option" value>Choose assignee</option>
       <option
         class="option"
         :value="user.id"
         :selected="todo.user_id == user.id"
         :key="user.id"
         v-for="user in users"
-      >
-        {{ user.name }}
-      </option>
+      >{{ user.name }}</option>
     </select>
 
-    <IconChevronDown class="down" />
+    <IconChevronDown class="down"/>
   </div>
 </template>
 
 <script>
-import User from '@/models/User'
-import Todo from '@/models/Todo'
-import IconUser from '@/components/icons/IconUser'
-import IconChevronDown from '@/components/icons/IconChevronDown'
+import User from "@/models/User";
+import Todo from "@/models/Todo";
 
 export default {
-  components: {
-    IconUser,
-    IconChevronDown
-  },
-
   props: {
     todoId: { type: String, required: true }
   },
 
   computed: {
-    users () {
-      return User.query().orderBy('name').get()
+    users() {
+      return User.query()
+        .orderBy("name")
+        .get();
     },
 
-    todo () {
-      return Todo.query().with('assignee').whereId(this.todoId).first()
+    todo() {
+      return Todo.query()
+        .with("assignee")
+        .whereId(this.todoId)
+        .first();
     }
   },
 
   methods: {
-    update (e) {
+    update(e) {
       Todo.update({
         id: this.todoId,
         user_id: e.target.value
-      })
+      });
     }
   }
-}
+};
 </script>
 
 <style scoped>
