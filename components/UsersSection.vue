@@ -6,27 +6,27 @@
         <button class="button" @click="add">ADD USER</button>
       </div>
 
-      <UserList/>
+      <UserList />
     </div>
   </section>
 </template>
 
 <script>
-import User from "@/models/User";
+import User from '@/models/User'
 
 export default {
   methods: {
     add() {
       User.insert({
-        data: { name: "" }
-      });
+        data: { name: '' }
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/styles/variables";
+@import '@/assets/styles/variables';
 
 .container {
   border-radius: 4px;

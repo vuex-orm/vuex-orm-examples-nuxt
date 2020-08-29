@@ -1,8 +1,12 @@
 <template>
   <div class="TodosAssignee">
-    <IconUser class="user"/>
+    <IconUser class="user" />
 
-    <select class="select" :class="{ selected: !!todo.assignee }" @change="update">
+    <select
+      class="select"
+      :class="{ selected: !!todo.assignee }"
+      @change="update"
+    >
       <option class="option" value>Choose assignee</option>
       <option
         class="option"
@@ -10,16 +14,18 @@
         :selected="todo.user_id == user.id"
         :key="user.id"
         v-for="user in users"
-      >{{ user.name }}</option>
+      >
+        {{ user.name }}
+      </option>
     </select>
 
-    <IconChevronDown class="down"/>
+    <IconChevronDown class="down" />
   </div>
 </template>
 
 <script>
-import User from "@/models/User";
-import Todo from "@/models/Todo";
+import User from '@/models/User'
+import Todo from '@/models/Todo'
 
 export default {
   props: {
@@ -29,15 +35,15 @@ export default {
   computed: {
     users() {
       return User.query()
-        .orderBy("name")
-        .get();
+        .orderBy('name')
+        .get()
     },
 
     todo() {
       return Todo.query()
-        .with("assignee")
+        .with('assignee')
         .whereId(this.todoId)
-        .first();
+        .first()
     }
   },
 
@@ -46,14 +52,14 @@ export default {
       Todo.update({
         id: this.todoId,
         user_id: e.target.value
-      });
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/styles/variables";
+@import '@/assets/styles/variables';
 
 .TodosAssignee {
   position: relative;

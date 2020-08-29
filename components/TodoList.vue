@@ -1,56 +1,61 @@
 <template>
   <div class="TodosList">
-    <div class="todo" :class="{ done: todo.done }" :key="todo.id" v-for="todo in todos">
+    <div
+      class="todo"
+      :class="{ done: todo.done }"
+      :key="todo.id"
+      v-for="todo in todos"
+    >
       <button class="icon" @click="toggle(todo)">
-        <IconCheckCircle class="svg check"/>
+        <IconCheckCircle class="svg check" />
       </button>
-      
+
       <input
         class="input"
         :value="todo.title"
         placeholder="Type in the title of the task!"
-        @input="e => { update(todo, e.target.value) }"
+        @input="(e) => update(todo, e.target.value)"
       >
 
-      <TodoListAssignee :todo-id="todo.id"/>
+      <TodoListAssignee :todo-id="todo.id" />
 
       <button class="icon" @click="destroy(todo)">
-        <IconTrash class="svg"/>
+        <IconTrash class="svg" />
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import Todo from "@/models/Todo";
+import Todo from '@/models/Todo'
 
 export default {
   computed: {
     todos() {
       return Todo.query()
-        .orderBy("id", "desc")
-        .get();
+        .orderBy('id', 'desc')
+        .get()
     }
   },
 
   methods: {
     toggle(todo) {
-      todo.$update({ done: !todo.done });
+      todo.$update({ done: !todo.done })
     },
 
     update(todo, title) {
-      todo.$update({ title });
+      todo.$update({ title })
     },
 
     destroy(todo) {
-      todo.$delete();
+      todo.$delete()
     }
   }
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/styles/variables";
+@import '@/assets/styles/variables';
 
 .todo {
   display: flex;

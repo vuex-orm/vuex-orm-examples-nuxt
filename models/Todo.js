@@ -4,7 +4,7 @@ import User from './User'
 export default class Todo extends Model {
   static entity = 'todos'
 
-  static fields () {
+  static fields() {
     return {
       id: this.uid(),
       user_id: this.string(null).nullable(),

@@ -5,45 +5,45 @@
         class="input"
         :value="user.name"
         placeholder="Type in user's name!"
-        @input="e => { update(user.id, e.target.value) }"
+        @input="(e) => update(user.id, e.target.value)"
       >
 
       <p class="tasks">{{ user.todos.length }} Tasks</p>
 
       <button class="icon" @click="destroy(user.id)">
-        <IconTrash class="trash"/>
+        <IconTrash class="trash" />
       </button>
     </div>
   </div>
 </template>
 
 <script>
-import User from "@/models/User";
+import User from '@/models/User'
 
 export default {
   computed: {
     users() {
       return User.query()
-        .with("todos")
-        .orderBy("id", "desc")
-        .get();
+        .with('todos')
+        .orderBy('id', 'desc')
+        .get()
     }
   },
 
   methods: {
     update(id, name) {
-      User.update({ id, name });
+      User.update({ id, name })
     },
 
     destroy(id) {
-      User.delete(id);
+      User.delete(id)
     }
   }
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/styles/variables";
+@import '@/assets/styles/variables';
 
 .user {
   display: flex;

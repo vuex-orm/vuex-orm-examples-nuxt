@@ -1,6 +1,6 @@
 // Emulating todo records which should be returned from API backend
 // in the real world.
-export default async function data () {
+export default async function data() {
   return [
     {
       title: 'Create awesome application!',

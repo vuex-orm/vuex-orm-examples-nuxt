@@ -18,7 +18,7 @@ import data from '@/data'
 import Todo from '@/models/Todo'
 
 export default {
-  async fetch () {
+  async fetch() {
     // Here we are stubbing the initial data. In the real world, this
     // should be the response from the API Backend.
     const initialData = await data()

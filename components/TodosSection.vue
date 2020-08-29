@@ -6,27 +6,27 @@
         <button class="button" @click="add">ADD TODO</button>
       </div>
 
-      <TodoList/>
+      <TodoList />
     </div>
   </section>
 </template>
 
 <script>
-import Todo from "@/models/Todo";
+import Todo from '@/models/Todo'
 
 export default {
   methods: {
     add() {
       Todo.insert({
-        data: { title: "" }
-      });
+        data: { title: '' }
+      })
     }
   }
-};
+}
 </script>
 
 <style scoped>
-@import "@/assets/styles/variables";
+@import '@/assets/styles/variables';
 
 .container {
   border-radius: 4px;
