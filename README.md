@@ -6,19 +6,17 @@ This example application demonstrates how [Vuex ORM](https://github.com/vuex-orm
 
 ## Running The Example
 
-Clone this repository and then run following commands.
+[Play on CodeSandbox](https://codesandbox.io/s/github/vuex-orm/vuex-orm-examples-nuxt) or clone repository and run the following commands:
 
 ```bash
-$ npm install
-$ npm run dev
+# NPM
+npm install
+npm run dev
 
-# Or with yarn.
-
-$ yarn install
-$ yarn dev
+# Yarn
+yarn install
+yarn dev
 ```
-
-Then you can access http://localhost:3000 to play with the app!
 
 ## Contribution
 
